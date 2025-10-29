@@ -21,16 +21,16 @@ function RegisterForm() {
       // localStorage.setItem("users", JSON.stringify(newUser));
 
       // get existing users array or empty array
-      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+      const existingUsers = JSON.parse(localStorage.getItem("users"));
 
       // create new user
       const newUser = { username, email, password, bio };
 
       // add new user to array
-      existingUsers.push(newUser);
+      // existingUsers.push(newUser);
 
       // save updated list
-      localStorage.setItem("users", JSON.stringify(existingUsers));
+      localStorage.setItem("users", JSON.stringify(newUser));
 
       toast("user registered");
       navigate("/login");

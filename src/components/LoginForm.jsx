@@ -13,17 +13,24 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      const users = JSON.parse(localStorage.getItem("users")) || [];
+      // const users = JSON.parse(localStorage.getItem("users"));
+      // console.log(users);
+      // const foundUser = users?.find(
+      //   (user) => user.email === email && user.password === password
+      // );
+      // // let foundUser = false;
+      // // if (users.email == email && users.password == password) {
+      // //   foundUser = true;
+      // // }
+      // if (foundUser) {
+      //   localStorage.setItem("loggedInUser", JSON.stringify(users));
+      //   toast.success("logged in succesfully");
+      //   navigate("/profile");
+      const users = JSON.parse(localStorage.getItem("users"));
       console.log(users);
-      const foundUser = users?.find(
-        (user) => user.email === email && user.password === password
-      );
-      // let foundUser = false;
-      // if (users.email == email && users.password == password) {
-      //   foundUser = true;
-      // }
-      if (foundUser) {
-        localStorage.setItem("loggedInUser", JSON.stringify(users));
+
+      if (users.email == email && users.password == password) { 
+        localStorage.setItem("users", JSON.stringify(users));
         toast.success("logged in succesfully");
         navigate("/profile");
       } else {

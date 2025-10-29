@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
@@ -30,10 +30,7 @@ export default App;
 
 //user
 export const ProtectedRoute = () => {
-  const navigate = useNavigate();
-  if (localStorage.getItem("loggedInUser")) {
-    return <Outlet />;
-  } else {
-    return navigate("/login");
-  }
+  const user = JSON.parse(localStorage.getItem("users"));
+
+  return user ? <Outlet /> : <Navigate to="/register" replace />;
 };

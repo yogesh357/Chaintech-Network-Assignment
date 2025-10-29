@@ -2,12 +2,15 @@ import React from "react";
 import { useAppContext } from "../context/appContext";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Navbar() {
   const { user } = useAppContext();
   const navigate = useNavigate();
   const handleLogoutUser = () => {
-    localStorage.removeItemm("loggedInUser");
+    localStorage.removeItem("users");
+    toast.success("logged out ");
+    navigate("/register");
   };
   return (
     <div>

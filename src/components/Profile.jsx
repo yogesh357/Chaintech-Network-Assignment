@@ -193,8 +193,8 @@ function Profile() {
     e.preventDefault();
 
     try {
-      localStorage.setItem("users", JSON.stringify([formData]));
-      localStorage.setItem("loggedInUser", JSON.stringify([formData]));
+      localStorage.setItem("users", JSON.stringify(formData));
+      localStorage.setItem("loggedInUser", JSON.stringify(formData));
       setUser(formData);
       setIsEditing(false);
       toast.success("Profile updated successfully!");

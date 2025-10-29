@@ -7,12 +7,12 @@ export const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     // const loggedInUser = localStorage.getItem("loggedInUser");
-    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    const loggedInUser = JSON.parse(localStorage.getItem("users"));
     // if (!loggedInUser) {
     //   return;
     // }
     console.log("current logged in user :", loggedInUser);
-    setUser(loggedInUser[0]);
+    setUser(loggedInUser);
   }, []);
 
   const value = { user, setUser };
