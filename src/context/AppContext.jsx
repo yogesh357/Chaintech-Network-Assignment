@@ -16,6 +16,7 @@ export const ContextProvider = ({ children }) => {
   }, []);
 
   const value = { user, setUser };
+  
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
