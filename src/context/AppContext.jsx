@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
+// export const AppContext = createContext();
 export const AppContext = createContext();
 
 export const ContextProvider = ({ children }) => {
@@ -16,7 +17,7 @@ export const ContextProvider = ({ children }) => {
   }, []);
 
   const value = { user, setUser };
-  
+
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 

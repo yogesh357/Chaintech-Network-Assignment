@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppContext } from "../context/appContext";
+import { useAppContext } from "../context/AppContext";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
